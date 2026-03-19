@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — BuildCore Construction</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--steel);
+    }
+    .service-detail:last-of-type { border-bottom: none; }
+    .service-detail.reverse .service-img { order: 2; }
+    .service-detail.reverse .service-text { order: 1; }
+    .service-img img { height: 380px; border-radius: var(--radius); }
+    .service-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      position: absolute;
+      top: -1rem; right: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+    .service-text { position: relative; }
+    .feature-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .chip {
+      font-family: var(--font-cond);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border: 1px solid var(--steel);
+      border-radius: 2px;
+      color: var(--muted);
+    }
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--steel); }
+    .process-step {
+      background: var(--dark-2);
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .process-step h4 { font-family: var(--font-cond); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: .4rem; }
+    .process-step p { font-size: .88rem; }
+    @media (max-width: 900px) {
+      .service-detail { grid-template-columns: 1fr; gap: 2rem; }
+      .service-detail.reverse .service-img { order: 0; }
+      .service-detail.reverse .service-text { order: 0; }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
+      .service-tag { display: none; }
+    }
+    @media (max-width: 640px) { .process-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <div class="page-hero" style="padding-top:80px">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=70')"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> Services</div>
+      <div class="tag">What We Offer</div>
+      <h1>Our Services</h1>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+
+  <!-- ══ INTRO ══ -->
+  <section class="section" style="text-align:center;padding-bottom:2rem">
+    <div class="container reveal">
+      <div class="tag">Full-Spectrum Construction</div>
+      <h2>Built for <span class="gold">Every Scale</span></h2>
+      <div class="divider" style="margin:1rem auto 1.5rem"></div>
+      <p style="max-width:600px;margin:0 auto">From a single-family home to a multi-million dollar industrial facility, we bring the same dedication, precision, and expertise to every engagement.</p>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES DETAIL ══ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+
+      <div class="service-detail reveal">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" alt="Residential Construction"/>
+        </div>
+        <div class="service-text">
+          <span class="service-tag">01</span>
+          <div class="tag">Residential</div>
+          <h2>Home <span class="gold">Construction</span></h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1rem">Whether you're building your dream home from the ground up or transforming an existing space, our residential team delivers exceptional craftsmanship and attention to detail. We work closely with homeowners to ensure every specification is met.</p>
+          <p>From architectural planning and structural work to interior finishing and landscaping, we manage your entire project.</p>
+          <div class="feature-chips">
+            <span class="chip">New Builds</span>
+            <span class="chip">Renovations</span>
+            <span class="chip">Extensions</span>
+            <span class="chip">Fit-Out</span>
+            <span class="chip">Pool Construction</span>
+          </div>
+          <div style="margin-top:2rem">
+            <a href="contact.html" class="btn btn-gold">Get a Residential Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail reverse reveal">
+        <div class="service-text">
+          <span class="service-tag">02</span>
+          <div class="tag">Commercial</div>
+          <h2>Commercial <span class="gold">Projects</span></h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1rem">Our commercial division has delivered everything from boutique retail spaces to 20-floor office towers. We understand that time is money in commercial construction, so we prioritize schedule adherence without compromising quality.</p>
+          <p>Our teams are OSHA-certified and operate under strict safety protocols to minimize disruption to surrounding businesses.</p>
+          <div class="feature-chips">
+            <span class="chip">Office Buildings</span>
+            <span class="chip">Retail Spaces</span>
+            <span class="chip">Hotels</span>
+            <span class="chip">Medical Facilities</span>
+            <span class="chip">Mixed-Use</span>
+          </div>
+          <div style="margin-top:2rem">
+            <a href="contact.html" class="btn btn-gold">Get a Commercial Quote</a>
+          </div>
+        </div>
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Commercial Construction"/>
+        </div>
+      </div>
+
+      <div class="service-detail reveal">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80" alt="Industrial Construction"/>
+        </div>
+        <div class="service-text">
+          <span class="service-tag">03</span>
+          <div class="tag">Industrial</div>
+          <h2>Industrial <span class="gold">Construction</span></h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1rem">Our industrial division specializes in heavy-duty structures engineered for performance and longevity. We handle the unique engineering challenges of industrial construction including heavy load bearing, specialized ventilation, and complex utilities infrastructure.</p>
+          <p>We have experience with government-regulated facilities and can navigate complex permitting processes on your behalf.</p>
+          <div class="feature-chips">
+            <span class="chip">Warehouses</span>
+            <span class="chip">Factories</span>
+            <span class="chip">Power Plants</span>
+            <span class="chip">Infrastructure</span>
+            <span class="chip">Cold Storage</span>
+          </div>
+          <div style="margin-top:2rem">
+            <a href="contact.html" class="btn btn-gold">Get an Industrial Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-detail reverse reveal">
+        <div class="service-text">
+          <span class="service-tag">04</span>
+          <div class="tag">Additional Services</div>
+          <h2>Project <span class="gold">Management</span></h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1rem">Already have a contractor? Let our expert PMs take the oversight off your plate. We offer standalone project management services including scheduling, budget tracking, quality control inspections, and contractor coordination.</p>
+          <p>Our PMs use industry-leading software to give you real-time visibility into your project's progress.</p>
+          <div class="feature-chips">
+            <span class="chip">Site Supervision</span>
+            <span class="chip">Cost Management</span>
+            <span class="chip">QA / QC</span>
+            <span class="chip">Consulting</span>
+            <span class="chip">Feasibility Studies</span>
+          </div>
+          <div style="margin-top:2rem">
+            <a href="contact.html" class="btn btn-gold">Discuss Your Needs</a>
+          </div>
+        </div>
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Project Management"/>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ PROCESS ══ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <div class="tag">How We Work</div>
+        <h2>Our <span class="gold">Process</span></h2>
+        <div class="divider" style="margin:1rem auto 1.5rem"></div>
+        <p style="max-width:500px;margin:0 auto">A clear, proven process that keeps every project on track from day one.</p>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h4>Consultation</h4>
+          <p>Free initial meeting to understand your goals, timeline, and budget.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h4>Planning &amp; Design</h4>
+          <p>Detailed scope, architectural drawings, and comprehensive cost estimate.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h4>Construction</h4>
+          <p>Expert teams execute the plan with daily progress updates and QC checks.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h4>Handover</h4>
+          <p>Final inspection, documentation, and keys in your hands — on time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section style="background:var(--gold);padding:3rem 0;text-align:center">
+    <div class="container">
+      <h2 style="color:var(--black);font-size:clamp(1.8rem,4vw,3rem)">Start Your Project Today</h2>
+      <p style="color:rgba(10,10,10,.7);margin:.7rem auto 2rem;max-width:500px">Tell us about your project and we'll provide a detailed, transparent estimate within 48 hours.</p>
+      <a href="contact.html" class="btn" style="background:var(--black);color:var(--gold)">Request a Free Quote →</a>
+    </div>
+  </section>
+
+  <script src="../js/components.js"></script>
+  <script>injectNav(); injectFooter('../');</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — BuildCore Construction</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      font-family: var(--font-cond);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: .5rem 1.3rem;
+      border: 1px solid var(--steel);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .projects-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .pj {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .pj img { width: 100%; display: block; transition: transform .5s; }
+    .pj:hover img { transform: scale(1.06); }
+    .pj-tall img { height: 420px; }
+    .pj-short img { height: 260px; }
+    .pj-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.9) 40%, transparent 80%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+      transition: opacity var(--transition);
+    }
+    .pj-cat {
+      font-family: var(--font-cond);
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .3rem;
+    }
+    .pj h4 {
+      font-family: var(--font-cond);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pj p { font-size: .85rem; color: var(--light); margin-top: .3rem; opacity: 0; transform: translateY(8px); transition: all .35s; }
+    .pj:hover p { opacity: 1; transform: translateY(0); }
+    .pj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-cond);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: .8rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all .35s .05s;
+    }
+    .pj:hover .pj-link { opacity: 1; transform: translateY(0); }
+    .pj[data-cat].hidden { display: none; }
+    @media (max-width:900px) { .projects-masonry { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px) { .projects-masonry { grid-template-columns:1fr; } .pj-tall img,.pj-short img { height:250px; } }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <div class="page-hero" style="padding-top:80px">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=1400&q=70')"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> Projects</div>
+      <div class="tag">Portfolio</div>
+      <h1>Our Projects</h1>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+
+  <!-- ══ PROJECTS GRID ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">850+ Completed</div>
+        <h2>Built with <span class="gold">Pride</span></h2>
+        <div class="divider"></div>
+        <p>A selection of our landmark projects across residential, commercial, and industrial sectors.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="industrial">Industrial</button>
+      </div>
+
+      <div class="projects-masonry">
+        <div class="pj pj-tall reveal" data-cat="residential">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Al Noor Villa"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Residential</div>
+            <h4>Al Noor Luxury Villa</h4>
+            <p>6-bedroom luxury villa — Cairo, 2024</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="commercial">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Delta Tower"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Commercial</div>
+            <h4>Delta Business Tower</h4>
+            <p>18-floor office complex — Giza, 2023</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="industrial">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80" alt="Nile Hub"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Industrial</div>
+            <h4>Nile Logistics Hub</h4>
+            <p>15,000m² warehouse — Alexandria, 2024</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="residential">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Marina Compound"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Residential</div>
+            <h4>Marina Compound</h4>
+            <p>40-unit gated compound — North Coast, 2023</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-tall reveal" data-cat="commercial">
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=600&q=80" alt="Capital Mall"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Commercial</div>
+            <h4>Capital Shopping Mall</h4>
+            <p>3-floor retail center — New Cairo, 2022</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="industrial">
+          <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80" alt="Pharma Factory"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Industrial</div>
+            <h4>PharmaEgypt Facility</h4>
+            <p>GMP pharmaceutical plant — 10th of Ramadan, 2023</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="residential">
+          <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80" alt="Garden Hills"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Residential</div>
+            <h4>Garden Hills Villas</h4>
+            <p>12 duplex villas — Sheikh Zayed, 2024</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="commercial">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Tech Campus"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Commercial</div>
+            <h4>TechHub Office Campus</h4>
+            <p>Smart office campus — Smart Village, 2022</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+        <div class="pj pj-short reveal" data-cat="industrial">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Steel Works"/>
+          <div class="pj-overlay">
+            <div class="pj-cat">Industrial</div>
+            <h4>NileStar Steel Works</h4>
+            <p>Heavy industry plant — Sadat City, 2021</p>
+            <span class="pj-link">View Details →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section style="background:var(--gold);padding:3rem 0;text-align:center">
+    <div class="container">
+      <h2 style="color:var(--black);font-size:clamp(1.8rem,4vw,3rem)">Your Project Could Be Next</h2>
+      <p style="color:rgba(10,10,10,.7);margin:.7rem auto 2rem;max-width:500px">Join 850+ satisfied clients who trusted BuildCore to bring their vision to life.</p>
+      <a href="contact.html" class="btn" style="background:var(--black);color:var(--gold)">Start Your Project →</a>
+    </div>
+  </section>
+
+  <script src="../js/components.js"></script>
+  <script>injectNav(); injectFooter('../');</script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projects   = document.querySelectorAll('.pj[data-cat]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        projects.forEach(p => {
+          if (f === 'all' || p.dataset.cat === f) {
+            p.classList.remove('hidden');
+          } else {
+            p.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

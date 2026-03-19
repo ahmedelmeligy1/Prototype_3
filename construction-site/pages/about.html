@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — BuildCore Construction</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .team-card { text-align: center; }
+    .team-card img { height: 260px; border-radius: var(--radius); margin-bottom: 1rem; }
+    .team-card h4 { font-family: var(--font-cond); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .team-card span { font-size: .85rem; color: var(--gold); font-family: var(--font-cond); letter-spacing: 1px; text-transform: uppercase; }
+    .value-card {
+      padding: 2rem;
+      background: var(--dark-2);
+      border: 1px solid var(--steel);
+      border-radius: var(--radius);
+      border-top: 3px solid var(--gold);
+    }
+    .value-card h4 { font-family: var(--font-cond); font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: .8rem 0 .5rem; }
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: .6rem; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--steel));
+    }
+    .tl-item { position: relative; margin-bottom: 2.5rem; }
+    .tl-dot {
+      position: absolute;
+      left: -2rem; top: .2rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--black);
+      box-shadow: 0 0 0 2px var(--gold-dark);
+    }
+    .tl-year { font-family: var(--font-cond); font-size: .8rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: .2rem; }
+    .tl-item h4 { font-family: var(--font-cond); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: .3rem; }
+    .tl-item p { font-size: .9rem; }
+    @media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <div class="page-hero" style="padding-top:80px">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=70')"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> About Us</div>
+      <div class="tag">Our Story</div>
+      <h1>About BuildCore</h1>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+
+  <!-- ══ MISSION ══ -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div class="reveal">
+          <div class="tag">Our Mission</div>
+          <h2>Building <span class="gold">Trust</span> Brick by Brick</h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1rem">Founded in 2005, BuildCore Construction has grown from a small team of dedicated builders into one of the region's most respected construction companies, with over 850 completed projects spanning residential, commercial, and industrial sectors.</p>
+          <p>Our mission is simple: deliver exceptional quality, on time, within budget — every single time. We achieve this through rigorous project management, certified skilled labor, and an uncompromising commitment to safety and craftsmanship.</p>
+        </div>
+        <div class="reveal">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80" alt="Our Team" style="border-radius:var(--radius);height:400px"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VALUES ══ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <div class="tag">Core Values</div>
+        <h2>What Drives <span class="gold">Us</span></h2>
+        <div class="divider" style="margin:1rem auto 1.5rem"></div>
+      </div>
+      <div class="grid-3">
+        <div class="value-card reveal">
+          <div style="font-size:2rem">🏗️</div>
+          <h4>Excellence</h4>
+          <p>We hold ourselves to the highest standards of craftsmanship in every project we undertake.</p>
+        </div>
+        <div class="value-card reveal">
+          <div style="font-size:2rem">🤝</div>
+          <h4>Integrity</h4>
+          <p>Honest pricing, transparent communication, and ethical business practices — always.</p>
+        </div>
+        <div class="value-card reveal">
+          <div style="font-size:2rem">🌱</div>
+          <h4>Sustainability</h4>
+          <p>We incorporate eco-friendly materials and practices to minimize our environmental footprint.</p>
+        </div>
+        <div class="value-card reveal">
+          <div style="font-size:2rem">🛡️</div>
+          <h4>Safety First</h4>
+          <p>Zero-compromise safety protocols protect our teams and the communities we build in.</p>
+        </div>
+        <div class="value-card reveal">
+          <div style="font-size:2rem">⚡</div>
+          <h4>Innovation</h4>
+          <p>Modern construction technologies and methods for faster, smarter project delivery.</p>
+        </div>
+        <div class="value-card reveal">
+          <div style="font-size:2rem">❤️</div>
+          <h4>Community</h4>
+          <p>We invest in local talent and give back to the communities where we operate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TIMELINE ══ -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem">
+        <div class="reveal">
+          <div class="tag">Our Journey</div>
+          <h2>20 Years of <span class="gold">Growth</span></h2>
+          <div class="divider"></div>
+          <div class="timeline" style="margin-top:2rem">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-year">2005</div>
+              <h4>Founded</h4>
+              <p>Started with 5 team members and our first residential project in Cairo.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-year">2010</div>
+              <h4>Commercial Expansion</h4>
+              <p>Secured first major commercial contract — a 10-floor office building.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-year">2015</div>
+              <h4>ISO Certification</h4>
+              <p>Achieved ISO 9001 quality management certification and expanded to 100+ staff.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-year">2020</div>
+              <h4>Industrial Division</h4>
+              <p>Launched our industrial construction division, completing our first factory complex.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-year">2025</div>
+              <h4>850+ Projects</h4>
+              <p>Celebrating 20 years and 850+ successfully completed projects across the country.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" alt="BuildCore history" style="border-radius:var(--radius);height:550px"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TEAM ══ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <div class="tag">Leadership</div>
+        <h2>Meet the <span class="gold">Team</span></h2>
+        <div class="divider" style="margin:1rem auto 1.5rem"></div>
+        <p style="margin:0 auto;max-width:500px">Our experienced leadership team brings decades of construction expertise to every project.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO"/>
+          <h4>Ahmed Hassan</h4>
+          <span>CEO &amp; Founder</span>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="COO"/>
+          <h4>Sarah Mitchell</h4>
+          <span>Chief Operations Officer</span>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Engineer"/>
+          <h4>Karim Nasser</h4>
+          <span>Head of Engineering</span>
+        </div>
+        <div class="team-card reveal">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Architect"/>
+          <h4>Layla Farooq</h4>
+          <span>Lead Architect</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Let's Build Together</h2>
+      <p>Talk to our team about your next project and get a free, no-obligation estimate.</p>
+      <a href="contact.html" class="btn" style="background:var(--black);color:var(--gold)">Get in Touch →</a>
+    </div>
+  </section>
+
+  <script src="../js/components.js"></script>
+  <script>injectNav(); injectFooter('../');</script>
+  <script src="../js/main.js"></script>
+  <style>
+    .cta-band { background:var(--gold);padding:3rem 0;text-align:center; }
+    .cta-band h2 { color:var(--black);font-size:clamp(1.8rem,4vw,3rem); }
+    .cta-band p { color:rgba(10,10,10,.7);margin:.7rem auto 2rem;max-width:500px; }
+  </style>
+</body>
+</html>

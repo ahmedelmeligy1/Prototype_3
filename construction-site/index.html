@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuildCore Construction — Building Excellence</title>
+  <meta name="description" content="Professional construction services: residential, commercial, industrial. Quality craftsmanship since 2005."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(.28);
+      transform: scale(1.04);
+      animation: kenBurns 14s ease-in-out infinite alternate;
+    }
+    @keyframes kenBurns { from { transform: scale(1.04); } to { transform: scale(1.12) translateX(-1%); } }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10,10,10,0.7) 40%, transparent);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero-content h1 { margin-bottom: .4rem; line-height: .95; }
+    .hero-content h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-family: var(--font-cond);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light);
+      margin: 1.4rem 0 2.2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-cond);
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: bounce 2.4s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+    /* ── GOLD BAR ── */
+    .gold-strip {
+      background: var(--gold);
+      padding: 1rem 0;
+    }
+    .gold-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+    .gold-strip-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-cond);
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .gold-strip-item svg { flex-shrink: 0; }
+
+    /* ── ABOUT SNIPPET ── */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-img { position: relative; }
+    .about-img img { border-radius: var(--radius); height: 480px; }
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      background: var(--gold);
+      color: var(--black);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      font-family: var(--font-display);
+    }
+    .about-badge .num { font-size: 3.2rem; line-height: 1; }
+    .about-badge .lbl { font-family: var(--font-cond); font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; }
+    .check-list { list-style: none; margin: 1.5rem 0 2rem; }
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--steel);
+      font-size: .95rem;
+    }
+    .check-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── STATS ── */
+    .stats-row {
+      background: var(--dark-2);
+      border-top: 1px solid var(--steel);
+      border-bottom: 1px solid var(--steel);
+      padding: 3rem 0;
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; text-align: center; }
+
+    /* ── SERVICES PREVIEW ── */
+    .service-icon {
+      width: 52px; height: 52px;
+      border: 2px solid var(--gold-dark);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    /* ── WHY US ── */
+    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+    .why-item {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: var(--dark-2);
+      border: 1px solid var(--steel);
+      border-radius: var(--radius);
+    }
+    .why-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid var(--gold-dark);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+    .why-item h4 { font-family: var(--font-cond); font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: .3rem; }
+    .why-item p { font-size: .88rem; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--gold);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .cta-band h2 { color: var(--black); font-size: clamp(1.8rem,4vw,3rem); }
+    .cta-band p { color: rgba(10,10,10,.7); margin: .7rem auto 2rem; max-width: 500px; }
+    .cta-band .btn {
+      background: var(--black);
+      color: var(--gold);
+    }
+    .cta-band .btn:hover {
+      background: var(--dark);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+
+    /* ── PROJECTS PREVIEW ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .proj-card { position: relative; border-radius: var(--radius); overflow: hidden; }
+    .proj-card img { height: 280px; transition: transform .5s; }
+    .proj-card:hover img { transform: scale(1.08); }
+    .proj-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 40%, transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .proj-card:hover .proj-overlay { opacity: 1; }
+    .proj-always {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.75) 60%, transparent);
+      padding: 1.5rem;
+    }
+    .proj-always h4 { font-family: var(--font-cond); font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; }
+    .proj-always span { font-size: .8rem; color: var(--gold); font-family: var(--font-cond); letter-spacing: 1px; text-transform: uppercase; }
+
+    @media (max-width: 900px) {
+      .about-split { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge { bottom: 1rem; right: 1rem; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 640px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .gold-strip-inner { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV injected via JS -->
+
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="tag">Est. 2005 · Licensed &amp; Insured</div>
+      <h1>WE BUILD<br><em>WHAT MATTERS</em></h1>
+      <p class="hero-sub">Residential · Commercial · Industrial Construction</p>
+      <div class="hero-btns">
+        <a href="pages/contact.html" class="btn btn-gold">Get a Free Quote</a>
+        <a href="pages/projects.html" class="btn btn-outline">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ══ GOLD STRIP ══════════════════════════════ -->
+  <div class="gold-strip">
+    <div class="container">
+      <div class="gold-strip-inner">
+        <div class="gold-strip-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Licensed &amp; Bonded
+        </div>
+        <div class="gold-strip-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          20+ Years Experience
+        </div>
+        <div class="gold-strip-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          On-Time Delivery
+        </div>
+        <div class="gold-strip-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Free Consultation
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT SNIPPET ══════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Construction site"/>
+          <div class="about-badge">
+            <div class="num">20+</div>
+            <div class="lbl">Years of<br>Excellence</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="tag">Who We Are</div>
+          <h2>Trusted Builders, <span class="gold">Lasting Results</span></h2>
+          <div class="divider"></div>
+          <p>BuildCore Construction has been delivering world-class construction projects across residential, commercial, and industrial sectors since 2005. Our team of certified engineers and skilled tradespeople brings precision and pride to every project.</p>
+          <ul class="check-list">
+            <li>ISO-certified quality management systems</li>
+            <li>Dedicated project managers for every build</li>
+            <li>Transparent pricing — no hidden costs</li>
+            <li>Full project lifecycle from design to handover</li>
+          </ul>
+          <a href="pages/about.html" class="btn btn-gold">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS ══════════════════════════════════ -->
+  <div class="stats-row">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-num" data-target="850" data-suffix="+">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-target="200" data-suffix="+">0</div>
+          <div class="stat-label">Expert Team Members</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-target="20" data-suffix="yrs">0</div>
+          <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num" data-target="98" data-suffix="%">0</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES PREVIEW ══════════════════════ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">What We Do</div>
+        <h2>Our Core <span class="gold">Services</span></h2>
+        <div class="divider"></div>
+        <p>From foundation to finishing, we handle every stage of construction with unmatched expertise.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" alt="Residential Construction"/>
+          </div>
+          <div class="card-body">
+            <div class="service-icon">🏠</div>
+            <h3>Residential</h3>
+            <p>Custom homes, renovations, and additions built to the highest residential standards.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Commercial Construction"/>
+          </div>
+          <div class="card-body">
+            <div class="service-icon">🏢</div>
+            <h3>Commercial</h3>
+            <p>Office buildings, retail spaces, and hospitality venues delivered on schedule.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=600&q=80" alt="Industrial Construction"/>
+          </div>
+          <div class="card-body">
+            <div class="service-icon">🏭</div>
+            <h3>Industrial</h3>
+            <p>Factories, warehouses, and infrastructure projects engineered for durability.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem">
+        <a href="pages/services.html" class="btn btn-outline">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY US ══════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">Why BuildCore</div>
+        <h2>The <span class="gold">Difference</span> We Make</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-icon">🛡️</div>
+          <div>
+            <h4>Fully Licensed &amp; Insured</h4>
+            <p>All certifications up to date. You're fully protected on every project.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">📐</div>
+          <div>
+            <h4>Precision Engineering</h4>
+            <p>Every detail is engineered to spec by our certified in-house team.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">⏱️</div>
+          <div>
+            <h4>On-Time, Every Time</h4>
+            <p>We have a 97% on-time completion rate backed by contractual guarantees.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">💬</div>
+          <div>
+            <h4>Transparent Communication</h4>
+            <p>Regular updates, dedicated project manager, and real-time tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS PREVIEW ════════════════════════ -->
+  <section class="section" style="background:var(--dark-2)">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">Our Work</div>
+        <h2>Featured <span class="gold">Projects</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="proj-card reveal">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Luxury Villa"/>
+          <div class="proj-always">
+            <span>Residential</span>
+            <h4>Al Noor Luxury Villa</h4>
+          </div>
+          <div class="proj-overlay">
+            <p style="font-size:.85rem;color:var(--light)">6-bedroom luxury villa — completed 2024</p>
+            <a href="pages/projects.html" class="btn btn-gold" style="margin-top:.8rem;padding:.6rem 1.2rem;font-size:.85rem">View Project</a>
+          </div>
+        </div>
+        <div class="proj-card reveal">
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=600&q=80" alt="Office Complex"/>
+          <div class="proj-always">
+            <span>Commercial</span>
+            <h4>Delta Business Tower</h4>
+          </div>
+          <div class="proj-overlay">
+            <p style="font-size:.85rem;color:var(--light)">18-floor office complex — completed 2023</p>
+            <a href="pages/projects.html" class="btn btn-gold" style="margin-top:.8rem;padding:.6rem 1.2rem;font-size:.85rem">View Project</a>
+          </div>
+        </div>
+        <div class="proj-card reveal">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80" alt="Warehouse"/>
+          <div class="proj-always">
+            <span>Industrial</span>
+            <h4>Nile Logistics Hub</h4>
+          </div>
+          <div class="proj-overlay">
+            <p style="font-size:.85rem;color:var(--light)">15,000m² logistics warehouse — completed 2024</p>
+            <a href="pages/projects.html" class="btn btn-gold" style="margin-top:.8rem;padding:.6rem 1.2rem;font-size:.85rem">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem">
+        <a href="pages/projects.html" class="btn btn-outline">See All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BAND ════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Get a free consultation and detailed estimate from our expert team — no obligation.</p>
+      <a href="pages/contact.html" class="btn">Contact Us Today →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER injected via JS -->
+
+  <!-- ── TOAST ── -->
+  <div id="toast" style="
+    position:fixed; bottom:2rem; right:2rem; z-index:9999;
+    background:var(--gold); color:var(--black);
+    font-family:var(--font-cond); font-weight:700; letter-spacing:1px;
+    padding:1rem 1.8rem; border-radius:var(--radius);
+    transform:translateY(150%); transition:transform .4s ease;
+    font-size:.9rem; text-transform:uppercase;">
+    ✓ Opening WhatsApp...
+  </div>
+  <style>#toast.show { transform: translateY(0); }</style>
+
+  <script src="js/components.js"></script>
+  <script>injectNavHome(); injectFooter('');</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
